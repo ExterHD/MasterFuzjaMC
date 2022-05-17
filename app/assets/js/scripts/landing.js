@@ -559,7 +559,7 @@ function dlAsync(login = true){
                 case 'files':
                     setLaunchPercentage(100, 100)
                     loggerLaunchSuite.log('File validation complete.')
-                    setLaunchDetails('Downloading files..')
+                    setLaunchDetails('Pobieranie plików..')
                     break
             }
         } else if(m.context === 'progress'){
