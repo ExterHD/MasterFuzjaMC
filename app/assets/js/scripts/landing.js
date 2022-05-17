@@ -491,7 +491,7 @@ function dlAsync(login = true){
         }
     }
 
-    setLaunchDetails('Please wait..')
+    setLaunchDetails('Aby pobrać paczkę zaloguj się..')
     toggleLaunchArea(true)
     setLaunchPercentage(0, 100)
 
