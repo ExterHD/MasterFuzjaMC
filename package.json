@@ -1,6 +1,6 @@
 {
   "name": "masterfuzjamc",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "productName": "MasterFuzjaMC",
   "description": "Modded Minecraft Launcher",
   "author": "ExterHD",
@@ -35,8 +35,6 @@
     "got": "^11.8.3",
     "helios-core": "~0.1.0",
     "jquery": "^3.6.0",
-    "minecraft-server-status": "^1.0.1",
-    "mojang-minecraft-api": "^1.0.2",
     "node-stream-zip": "^1.15.0",
     "request": "^2.88.2",
     "semver": "^7.3.5",
