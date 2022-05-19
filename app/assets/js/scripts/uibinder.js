@@ -114,9 +114,9 @@ function showFatalStartupError(){
         $('#loadingContainer').fadeOut(250, () => {
             document.getElementById('overlayContainer').style.background = 'none'
             setOverlayContent(
-                'Fatal Error: Unable to Load Distribution Index',
-                'A connection could not be established to our servers to download the distribution index. No local copies were available to load. <br><br>The distribution index is an essential file which provides the latest server information. The launcher is unable to start without it. Ensure you are connected to the internet and relaunch the application.',
-                'Close'
+                'Błąd krytyczny: nie można załadować indeksu dystrybucji',
+                'Nie można nawiązać połączenia z naszymi serwerami w celu pobrania indeksu dystrybucji. Brak lokalnych kopii do załadowania. <br><br>Indeks dystrybucji to niezbędny plik, który zawiera najnowsze informacje o serwerze. Program uruchamiający nie może się bez niego uruchomić. Upewnij się, że masz połączenie z Internetem i ponownie uruchom aplikację.',
+                'Zamknij'
             )
             setOverlayHandler(() => {
                 const window = remote.getCurrentWindow()
