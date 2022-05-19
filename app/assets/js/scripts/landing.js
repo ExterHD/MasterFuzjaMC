@@ -683,9 +683,9 @@ function dlAsync(login = true){
                 const gameStateChange = function(data){
                     data = data.trim()
                     if(SERVER_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('MasterFuzja-Launcher!')
+                        DiscordWrapper.updateDetails('W trakcie gry')
                     } else if(GAME_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('MasterFuzja-Launcher!')
+                        DiscordWrapper.updateDetails('Zapraszamy na')
                     }
                 }
 
