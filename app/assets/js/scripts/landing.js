@@ -222,7 +222,7 @@ const refreshServerStatus = async function(fade = false){
     loggerLanding.log('Refreshing Server Status')
     const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
 
-    let pLabel = 'SERVER'
+    let pLabel = 'SERWER'
     let pVal = 'OFFLINE'
 
     try {
@@ -324,13 +324,13 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 // If the result is null, no valid Java installation was found.
                 // Show this information to the user.
                 setOverlayContent(
-                    'No Compatible<br>Java Installation Found',
-                    'In order to join WesterosCraft, you need a 64-bit installation of Java 8. Would you like us to install a copy?',
-                    'Install Java',
-                    'Install Manually'
+                    'Nie znaleziono<br>zgodnej instalacji Java',
+                    'Aby dołączyć do serwerów Masterfuzji, potrzebujesz 64-bitowej instalacji Java 8. Czy chcesz, abyśmy ją zainstalowali?',
+                    'Zainstaluj Jawa',
+                    'Instalacja manualna'
                 )
                 setOverlayHandler(() => {
-                    setLaunchDetails('Preparing Java Download..')
+                    setLaunchDetails('Przygotowuję pobieranie Java...')
                     sysAEx.send({task: 'changeContext', class: 'AssetGuard', args: [ConfigManager.getCommonDirectory(),ConfigManager.getJavaExecutable()]})
                     sysAEx.send({task: 'execute', function: '_enqueueOpenJDK', argsArr: [ConfigManager.getDataDirectory()]})
                     toggleOverlay(false)
@@ -339,10 +339,10 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                     $('#overlayContent').fadeOut(250, () => {
                         //$('#overlayDismiss').toggle(false)
                         setOverlayContent(
-                            'Java is Required<br>to Launch',
-                            'A valid x64 installation of Java 8 is required to launch.<br><br>Please refer to our <a href="https://github.com/dscalzi/HeliosLauncher/wiki/Java-Management#manually-installing-a-valid-version-of-java">Java Management Guide</a> for instructions on how to manually install Java.',
-                            'I Understand',
-                            'Go Back'
+                            'Java jest wymagana<br>do uruchomienia',
+                            'Do uruchomienia wymagana jest prawidłowa instalacja oprogramowania Java 8 dla procesorów x64.<br><br>Zapoznaj się jak ręcznie zainstalować java <a href="https://github.com/dscalzi/HeliosLauncher/wiki/Java-Management#manually-installing-a-valid-version-of-java">Podręcznik zarządzania Java</a> zawiera instrukcje ręcznej instalacji oprogramowania Java.',
+                            'Zrozumiałem',
+                            'Wróć'
                         )
                         setOverlayHandler(() => {
                             toggleLaunchArea(false)
@@ -377,7 +377,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
             if(m.result === true){
 
                 // Oracle JRE enqueued successfully, begin download.
-                setLaunchDetails('Downloading Java..')
+                setLaunchDetails('Pobieranie Java..')
                 sysAEx.send({task: 'execute', function: 'processDlQueues', argsArr: [[{id:'java', limit:1}]]})
 
             } else {
@@ -385,9 +385,9 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 // Oracle JRE enqueue failed. Probably due to a change in their website format.
                 // User will have to follow the guide to install Java.
                 setOverlayContent(
-                    'Unexpected Issue:<br>Java Download Failed',
-                    'Unfortunately we\'ve encountered an issue while attempting to install Java. You will need to manually install a copy. Please check out our <a href="https://github.com/dscalzi/HeliosLauncher/wiki">Troubleshooting Guide</a> for more details and instructions.',
-                    'I Understand'
+                    'Nieoczekiwany problem:<br>Pobieranie Java nie powiodło się',
+                    'Niestety napotkaliśmy problem podczas próby instalacji Javy. Musisz ręcznie zainstalować kopię.<a href="https://github.com/dscalzi/HeliosLauncher/wiki">Przewodnik rozwiązywania problemów</a>, aby uzyskać więcej informacji i instrukcji.',
+                    'Zarozumiałem'
                 )
                 setOverlayHandler(() => {
                     toggleOverlay(false)
@@ -486,7 +486,7 @@ function dlAsync(login = true){
 
     if(login) {
         if(ConfigManager.getSelectedAccount() == null){
-            loggerLanding.error('You must be logged into an account.')
+            loggerLanding.error('Musisz być zalogowany na konto.')
             return
         }
     }
@@ -611,8 +611,8 @@ function dlAsync(login = true){
                     
                     if(m.error.code === 'ENOENT'){
                         showLaunchFailure(
-                            'Download Error',
-                            'Could not connect to the file server. Ensure that you are connected to the internet and try again.'
+                            'Błąd pobierania',
+                            'Nie można połączyć się z serwerem plików. Upewnij się, że masz połączenie z Internetem i spróbuj ponownie.'
                         )
                     } else {
                         showLaunchFailure(
