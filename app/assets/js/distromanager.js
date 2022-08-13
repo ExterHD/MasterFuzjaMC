@@ -537,8 +537,7 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'https://masterfuzja.pl/newtechlaunchercotrol/distribution.json'
-        //const distroURL = 'https://mc.westeroscraft.com/WesterosCraftLauncher/distribution.json'
+        const distroURL = 'http://newtech.masterfuzja.pl/distribution.json'
         const opts = {
             url: distroURL,
             timeout: 2500
